@@ -1,9 +1,94 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".hero-pill",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, delay: 0.2 }
+      );
+      gsap.fromTo(
+        ".hero-heading",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, delay: 0.4 }
+      );
+      gsap.fromTo(
+        ".hero-subtitle",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, delay: 0.6 }
+      );
+      gsap.fromTo(
+        ".hero-phone",
+        { y: 40, opacity: 0, scale: 0.95 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.8, delay: 0.8 }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="py-16 text-center">
-      <p className="text-text-primary">Hero Placeholder</p>
+    <section
+      ref={sectionRef}
+      id="home"
+      className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-16 px-6 overflow-hidden"
+    >
+      {/* Subtle radial gradient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
+
+      {/* Trust Pill */}
+      <div className="hero-pill highlight-pill-gradient rounded-full px-5 py-2 flex items-center gap-3 mb-8 opacity-0">
+        <div className="flex -space-x-2">
+          {[0, 1, 2].map((i) => (
+            <div
+              key={i}
+              className="w-7 h-7 rounded-full border-2 border-bg-primary"
+              style={{
+                background: ["#FF8766", "#FFBEA2", "#FF5A2C"][i],
+              }}
+            />
+          ))}
+        </div>
+        <span className="text-sm text-text-primary">
+          200+ brands & banks trust ZenEats
+        </span>
+      </div>
+
+      {/* Heading */}
+      <h1 className="hero-heading text-[40px] md:text-[56px] font-medium leading-[1] text-text-heading text-center max-w-[800px] mb-6 opacity-0">
+        Powering engagement where{" "}
+        <em className="text-accent not-italic italic">money</em> moves.
+      </h1>
+
+      {/* Subtitle */}
+      <p className="hero-subtitle text-base text-text-primary text-center max-w-[700px] mb-12 opacity-0">
+        ZenEats connects banks, brands, and consumers through a unified rewards
+        and engagement platform — driving loyalty, retention, and growth at
+        scale.
+      </p>
+
+      {/* Phone Mockup Area */}
+      <div className="hero-phone relative w-full max-w-[400px] mx-auto opacity-0">
+        {/* Blurred card decorations */}
+        <div className="absolute -left-16 top-8 w-48 h-32 rounded-2xl bg-accent/10 blur-xl rotate-[-8deg]" />
+        <div className="absolute -right-16 top-12 w-48 h-32 rounded-2xl bg-accent/8 blur-xl rotate-[8deg]" />
+
+        {/* Phone frame placeholder */}
+        <div className="relative mx-auto w-[240px] h-[480px] rounded-[32px] border-4 border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-accent/20 flex items-center justify-center">
+              <span className="text-accent text-2xl font-bold">Z</span>
+            </div>
+            <p className="text-text-primary/60 text-sm">App Preview</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
