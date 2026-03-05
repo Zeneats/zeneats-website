@@ -21,21 +21,21 @@ const footerColumns: FooterColumn[] = [
   },
   {
     title: "RESOURCES",
-    links: [{ label: "Case Studies", href: "#" }],
+    links: [{ label: "Case Studies", href: "/maintenance" }],
   },
   {
     title: "COMPANY",
     links: [
-      { label: "About Us", href: "/about" },
-      { label: "Contact Us", href: "#" },
+      { label: "About Us", href: "/maintenance" },
+      { label: "Contact Us", href: "/maintenance" },
     ],
   },
   {
     title: "LEGAL",
     links: [
-      { label: "Refund Policy", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
+      { label: "Refund Policy", href: "/maintenance" },
+      { label: "Privacy Policy", href: "/maintenance" },
+      { label: "Terms of Service", href: "/maintenance" },
     ],
   },
 ];
@@ -63,9 +63,9 @@ export default function Footer() {
               ZenEats
             </a>
             <p className="text-sm text-text-primary/60 mt-4 leading-relaxed">
-              123 Business Park, Bengaluru,
+              M/S Gurunath V Pandit, Vipul K Shah
               <br />
-              Karnataka 560001, India
+              Plot No. D-334, Nr Bagade, Turbhe Naka
             </p>
             {/* LinkedIn icon */}
             <a

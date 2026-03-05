@@ -17,10 +17,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <SubheadBanner />
-        <StatsCounter />
-        <LogoMarquee />
+        {/* <StatsCounter /> */}
+        {/* <LogoMarquee /> */}
         <BigCardsSection />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <FAQ />
         <CTABanner />
         <Footer />
