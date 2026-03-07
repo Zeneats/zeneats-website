@@ -6,7 +6,7 @@ export default function AdminDashboard() {
     <div className="w-full h-full bg-[#12122a] text-white p-5 pt-12 overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <p className="text-sm font-bold">Nexus Dashboard</p>
+        <p className="text-sm font-bold">ZenSight Dashboard</p>
         <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center text-[10px] font-bold shadow-md shadow-orange-500/30">
           Z
         </div>

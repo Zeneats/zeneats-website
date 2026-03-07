@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     q: "What analytics and reporting are available?",
-    a: "The Nexus Dashboard provides real-time insights on revenue, order volumes, vendor performance, food ratings, waste metrics, and employee satisfaction — all in one place.",
+    a: "The ZenSight Dashboard provides real-time insights on revenue, order volumes, vendor performance, food ratings, waste metrics, and employee satisfaction — all in one place.",
   },
   {
     q: "Can ZenEats support multiple cafeteria locations?",
