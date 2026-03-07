@@ -61,7 +61,7 @@ export default function Hero() {
           ))}
         </div>
         <span className="text-sm text-text-primary">
-          500+ corporates trust ZenEats
+          500+ cafeterias trust ZenEats
         </span>
       </div>
 

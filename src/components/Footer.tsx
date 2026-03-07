@@ -14,9 +14,9 @@ const footerColumns: FooterColumn[] = [
   {
     title: "SOLUTIONS",
     links: [
-      { label: "For Corporates", href: "/#for-corporates" },
-      { label: "For Vendors", href: "/#for-vendors" },
-      { label: "For Facilities", href: "/#for-facilities" },
+      { label: "Employee App", href: "/products#employee-app" },
+      { label: "Vendor Dashboard", href: "/products#vendor-dashboard" },
+      { label: "ZenSight Dashboard", href: "/products#zensight-dashboard" },
     ],
   },
   {
