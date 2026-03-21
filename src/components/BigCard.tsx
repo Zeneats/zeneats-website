@@ -5,6 +5,7 @@ interface BigCardProps {
   heading: React.ReactNode;
   description: string;
   ctaText: string;
+  ctaHref: string;
   chips?: string[];
   phoneContent?: React.ReactNode;
   reversed?: boolean;
@@ -15,32 +16,33 @@ export default function BigCard({
   heading,
   description,
   ctaText,
+  ctaHref,
   chips,
   phoneContent,
   reversed = false,
 }: BigCardProps) {
   return (
     <div
-      className={`bg-surface-light rounded-2xl p-6 pb-10 sm:p-8 sm:pb-16 flex flex-col ${
+      className={`bg-surface-light rounded-2xl p-8 pb-12 sm:p-10 sm:pb-16 flex flex-col ${
         reversed ? "lg:flex-row-reverse" : "lg:flex-row"
       } gap-8`}
     >
       {/* Content */}
       <div className="big-card-content flex-1 flex flex-col justify-center opacity-0">
-        <span className="text-accent text-base font-medium uppercase tracking-wide mb-3">
+        <span className="text-accent text-lg font-medium uppercase tracking-wide mb-4">
           {eyebrow}
         </span>
-        <h3 className="text-xl sm:text-2xl font-semibold text-text-dark leading-[1.2] sm:leading-[26.4px] mb-4">
+        <h3 className="text-2xl sm:text-3xl font-bold text-text-dark leading-[1.2] sm:leading-[1.2] mb-5">
           {heading}
         </h3>
-        <p className="text-base text-text-muted-dark mb-6">{description}</p>
+        <p className="text-base sm:text-lg text-text-muted-dark mb-8">{description}</p>
 
         {chips && chips.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-6">
             {chips.map((chip) => (
               <span
                 key={chip}
-                className="bg-white-30 rounded-lg px-2 py-2 text-sm text-text-dark"
+                className="bg-white-30 rounded-lg px-3 py-2 text-sm text-text-dark"
               >
                 {chip}
               </span>
@@ -48,7 +50,7 @@ export default function BigCard({
           </div>
         )}
 
-        <button className="self-start bg-accent text-white rounded-[160px] px-6 py-4 font-medium flex items-center gap-2 hover:bg-accent-bright transition-colors">
+        <a href={ctaHref} className="self-start bg-accent text-white rounded-[160px] px-6 py-4 font-medium flex items-center gap-2 hover:bg-accent-bright transition-colors">
           {ctaText}
           <svg
             width="16"
@@ -65,7 +67,7 @@ export default function BigCard({
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </a>
       </div>
 
       {/* Phone Mockup */}

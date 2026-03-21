@@ -1,39 +1,63 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import PhoneFrame from "./ui/PhoneFrame";
 import CafeteriaHome from "./phone-screens/CafeteriaHome";
 
-export default function Hero() {
+const rotatingWords = [
+  "Builders",
+  "Corporates",
+  "Hospitals",
+  "Events",
+  "Desk Ordering",
+  "Highway Food Courts",
+  "Flea Market",
+];
+
+interface HeroProps {
+  delayStart?: number;
+}
+
+export default function Hero({ delayStart = 0 }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const cycleWord = useCallback(() => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+      setIsAnimating(false);
+    }, 300);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(cycleWord, 2500);
+    return () => clearInterval(interval);
+  }, [cycleWord]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".hero-pill",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, delay: 0.2 }
-      );
-      gsap.fromTo(
         ".hero-heading",
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, delay: 0.4 }
+        { y: 0, opacity: 1, duration: 0.7, delay: delayStart + 0.2 }
       );
       gsap.fromTo(
         ".hero-subtitle",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, delay: 0.6 }
+        { y: 0, opacity: 1, duration: 0.6, delay: delayStart + 0.4 }
       );
       gsap.fromTo(
         ".hero-phone",
         { y: 40, opacity: 0, scale: 0.95 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.8, delay: 0.8 }
+        { y: 0, opacity: 1, scale: 1, duration: 0.8, delay: delayStart + 0.6 }
       );
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [delayStart]);
 
   return (
     <section
@@ -47,34 +71,24 @@ export default function Hero() {
       {/* Subtle radial gradient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
 
-      {/* Trust Pill */}
-      <div className="hero-pill highlight-pill-gradient rounded-full px-5 py-2 flex items-center gap-3 mb-8 opacity-0">
-        <div className="flex -space-x-2">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="w-7 h-7 rounded-full border-2 border-bg-primary"
-              style={{
-                background: ["#FF8766", "#FFBEA2", "#FF5A2C"][i],
-              }}
-            />
-          ))}
-        </div>
-        <span className="text-sm text-text-primary">
-          500+ cafeterias trust ZenEats
-        </span>
-      </div>
-
       {/* Heading */}
       <h1 className="hero-heading text-[32px] sm:text-[40px] md:text-[56px] font-semibold leading-[1.1] sm:leading-[1] text-text-heading text-center max-w-[800px] mb-6 opacity-0">
-        Redefining cafeterias for{" "}
-        <em className="text-accent italic">modern</em> workplaces.
+        Cafeterias, reimagined for{" "}
+        <span
+          className={`text-accent inline-block transition-all duration-300 ${
+            isAnimating
+              ? "opacity-0 translate-y-2"
+              : "opacity-100 translate-y-0"
+          }`}
+        >
+          {rotatingWords[wordIndex]}
+        </span>
       </h1>
 
       {/* Subtitle */}
       <p className="hero-subtitle text-base text-text-primary text-center max-w-[700px] mb-12 opacity-0">
-        ZenEats transforms corporate cafeterias with digital ordering, cashless
-        payments, and real-time analytics — improving employee experience while
+        ZenEats transforms cafeterias with digital ordering, cashless
+        payments, and real-time analytics — improving user experience while
         streamlining operations.
       </p>
 

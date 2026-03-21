@@ -44,7 +44,7 @@ export default function AudienceSection() {
         <h2 className="text-[28px] md:text-[40px] font-medium text-text-heading text-center mb-4">
           Serving India&apos;s top{" "}
           <em className="text-accent not-italic italic">
-            corporates
+            organizations
           </em>
         </h2>
         <p className="text-base text-text-primary text-center mb-12 max-w-[600px] mx-auto">
@@ -107,7 +107,7 @@ export default function AudienceSection() {
                 243
               </p>
               <p className="text-base text-text-primary">
-                Corporate clients
+                Organization clients
               </p>
             </div>
           </div>

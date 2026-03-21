@@ -162,8 +162,22 @@ export default function ProductsPage() {
       );
 
       // Scroll-triggered sections
+      const hash = window.location.hash;
+      const hashTarget = hash ? document.querySelector<HTMLElement>(hash) : null;
+
       const sections = gsap.utils.toArray<HTMLElement>("[data-animate]");
+      let reachedTarget = false;
+
       sections.forEach((el) => {
+        // If navigating to a hash, instantly reveal sections up to & including the target
+        if (hashTarget && !reachedTarget) {
+          gsap.set(el, { y: 0, opacity: 1 });
+          if (el === hashTarget || el.contains(hashTarget) || hashTarget.contains(el)) {
+            reachedTarget = true;
+          }
+          return;
+        }
+
         gsap.fromTo(
           el,
           { y: 40, opacity: 0 },
@@ -180,6 +194,13 @@ export default function ProductsPage() {
           }
         );
       });
+
+      // Scroll to hash target after layout settles
+      if (hashTarget) {
+        requestAnimationFrame(() => {
+          hashTarget.scrollIntoView({ behavior: "smooth" });
+        });
+      }
     }, pageRef);
 
     return () => ctx.revert();

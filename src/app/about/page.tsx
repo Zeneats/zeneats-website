@@ -59,35 +59,35 @@ const coreValues = [
 const founders = [
   {
     name: "Denil Lalan",
-    role: "Co-Founder & CEO",
+    role: "Co-Founder",
     gradient: "from-accent to-accent-bright",
     description:
       "Brings a strategic and operational mindset to building scalable cafeteria management systems that serve thousands daily.",
   },
   {
     name: "Kunal Shah",
-    role: "Co-Founder & COO",
+    role: "Co-Founder",
     gradient: "from-accent-bright to-orange-400",
     description:
       "Drives business insight, partnerships, and vendor networks that form the backbone of ZenEats' growing ecosystem.",
   },
   {
     name: "Harshil Shah",
-    role: "Co-Founder & Head of Operations",
+    role: "Co-Founder",
     gradient: "from-orange-400 to-accent",
     description:
       "Brings hands-on F&B expertise to kitchen operations, vendor management, and quality control across all locations.",
   },
   {
     name: "Harsh Maheshwari",
-    role: "Co-Founder & CTO",
+    role: "Technical Member",
     gradient: "from-accent-light to-accent",
     description:
       "Leads technology and product development, architecting the platform's digital infrastructure from ordering systems to analytics dashboards.",
   },
   {
     name: "Sanskar Maroo",
-    role: "Co-Founder & Head of Engineering",
+    role: "Technical Member",
     gradient: "from-accent to-accent-light",
     description:
       "Drives engineering execution, building scalable systems and ensuring technical excellence across the entire platform.",

@@ -13,7 +13,7 @@ const faqItems = [
   },
   {
     q: "What features does the employee app offer?",
-    a: "Employees can browse menus, pre-order meals, make cashless payments, track orders in real-time, set dietary preferences, and rate their food — all from their phone.",
+    a: "Users can browse menus, pre-order meals, make cashless payments, track orders in real-time, set dietary preferences, and rate their food — all from their phone.",
   },
   {
     q: "How does ZenEats help reduce food waste?",
@@ -29,7 +29,7 @@ const faqItems = [
   },
   {
     q: "How do cashless payments work?",
-    a: "Employees can pay via wallet top-ups, meal cards, UPI, or corporate meal benefits. All transactions are tracked and reconciled automatically, eliminating cash handling.",
+    a: "Users can pay via wallet top-ups, meal cards, UPI, or corporate meal benefits. All transactions are tracked and reconciled automatically, eliminating cash handling.",
   },
   {
     q: "What onboarding support does ZenEats provide?",

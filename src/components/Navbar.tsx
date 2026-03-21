@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/#home" },
   { label: "Products", href: "/products" },
-  { label: "For Corporates", href: "/#for-corporates" },
+  { label: "For Organizations", href: "/#for-organizations" },
   { label: "For Vendors", href: "/#for-vendors" },
   { label: "For Facilities", href: "/#for-facilities" },
   { label: "About", href: "/about" },
@@ -19,8 +20,17 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-[1120px] mx-auto px-6 flex items-center justify-between h-14">
         {/* Logo */}
-        <a href="/" className="text-accent font-semibold text-xl tracking-tight">
-          ZenEats
+        <a href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/logos/zeneats-logo.png"
+            alt="ZenEats"
+            width={44}
+            height={44}
+            className="h-11 w-11 rounded-md"
+          />
+          <span className="text-accent font-bold text-2xl tracking-tight">
+            ZenEats
+          </span>
         </a>
 
         {/* Desktop Nav Links */}

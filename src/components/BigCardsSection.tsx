@@ -11,17 +11,18 @@ import AdminDashboard from "./phone-screens/AdminDashboard";
 
 const cards = [
   {
-    id: "for-corporates",
-    eyebrow: "FOR CORPORATES",
+    id: "for-organizations",
+    eyebrow: "FOR ORGANIZATIONS",
     heading: (
       <>
         Smart cafeterias for{" "}
-        <em className="text-accent not-italic italic">happier</em> employees
+        <em className="text-accent not-italic italic">happier</em> users
       </>
     ),
     description:
-      "Digital ordering, cashless payments, real-time menus, and meal benefit management — everything your employees need for a seamless cafeteria experience.",
-    ctaText: "Explore for Corporates",
+      "Digital ordering, cashless payments, real-time menus, and meal benefit management — everything your users need for a seamless cafeteria experience.",
+    ctaText: "Explore for Organizations",
+    ctaHref: "/products#employee-app",
     chips: ["Digital Ordering", "Cashless Payments", "Real-time Menus", "Meal Benefits"],
     phoneContent: (
       <PhoneFrame>
@@ -42,6 +43,7 @@ const cards = [
     description:
       "Real-time order management, FIFO queuing, demand forecasting, and waste reduction tools that help kitchen teams serve faster and smarter.",
     ctaText: "Explore for Vendors",
+    ctaHref: "/products#vendor-dashboard",
     chips: ["Live Orders", "FIFO Queue", "Demand Forecasting", "Waste Reduction"],
     phoneContent: (
       <PhoneFrame>
@@ -63,6 +65,7 @@ const cards = [
     description:
       "Monitor sales, vendor performance, compliance, and sustainability metrics from a single dashboard. Make data-driven decisions for your cafeteria operations.",
     ctaText: "Explore for Facilities",
+    ctaHref: "/products#zensight-dashboard",
     chips: ["Analytics Dashboard", "Vendor Management", "Compliance", "Sustainability"],
     phoneContent: (
       <PhoneFrame>
@@ -136,6 +139,7 @@ export default function BigCardsSection() {
               heading={card.heading}
               description={card.description}
               ctaText={card.ctaText}
+              ctaHref={card.ctaHref}
               chips={card.chips}
               phoneContent={card.phoneContent}
               reversed={card.reversed}
