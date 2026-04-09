@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const navLinks = [
@@ -15,22 +15,26 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div className="max-w-[1120px] mx-auto px-6 flex items-center justify-between h-14">
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${scrolled ? "bg-bg-primary/90 backdrop-blur-sm" : "bg-transparent"}`}>
+      <div className="max-w-[1120px] mx-auto px-4 flex items-center justify-between py-0">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center">
           <Image
             src="/images/logos/zeneats-logo.png"
             alt="ZenEats"
-            width={44}
-            height={44}
-            className="h-11 w-11 rounded-md"
+            width={500}
+            height={150}
+            className="h-24 sm:h-28 w-auto object-contain"
           />
-          <span className="text-accent font-bold text-2xl tracking-tight">
-            ZenEats
-          </span>
         </a>
 
         {/* Desktop Nav Links */}

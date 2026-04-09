@@ -13,8 +13,8 @@ export default function MaintenancePage() {
 
       <div className="relative z-10 max-w-lg w-full text-center">
         {/* Logo */}
-        <a href="/" className="inline-block text-accent font-semibold text-2xl tracking-tight mb-12 hover:opacity-80 transition-opacity">
-          ZenEats
+        <a href="/" className="inline-block mb-12 hover:opacity-80 transition-opacity">
+          <img src="/images/logos/zeneats-logo.png" alt="ZenEats" className="h-12 w-auto object-contain" />
         </a>
 
         {/* Icon */}
@@ -42,7 +42,7 @@ export default function MaintenancePage() {
           <div className="space-y-4">
             {/* Email */}
             <a
-              href="mailto:info@zeneats.org"
+              href="mailto:info@zeneats.co.in"
               className="flex items-center gap-4 group"
             >
               <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
@@ -54,7 +54,7 @@ export default function MaintenancePage() {
               <div>
                 <p className="text-xs text-text-muted mb-0.5">Email</p>
                 <p className="text-sm text-text-primary group-hover:text-accent transition-colors">
-                  info@zeneats.org
+                  info@zeneats.co.in
                 </p>
               </div>
             </a>

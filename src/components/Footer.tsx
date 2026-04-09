@@ -26,8 +26,8 @@ const footerColumns: FooterColumn[] = [
   {
     title: "COMPANY",
     links: [
-      { label: "About Us", href: "/maintenance" },
-      { label: "Contact Us", href: "/maintenance" },
+      { label: "About Us", href: "/about" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
@@ -56,13 +56,20 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
           {/* Logo + Address */}
           <div className="col-span-2 md:col-span-1">
-            <a
-              href="/"
-              className="text-accent font-semibold text-xl tracking-tight"
-            >
-              ZenEats
+            <a href="/" className="inline-block">
+              <img
+                src="/images/logos/zeneats-logo.png"
+                alt="ZenEats"
+                className="h-10 w-auto object-contain"
+              />
             </a>
-            <p className="text-sm text-text-primary/60 mt-4 leading-relaxed">
+            <a
+              href="mailto:info@zeneats.co.in"
+              className="block text-sm text-text-primary/60 mt-4 hover:text-accent transition-colors"
+            >
+              info@zeneats.co.in
+            </a>
+            <p className="text-sm text-text-primary/60 mt-2 leading-relaxed">
               M/S Gurunath V Pandit, Vipul K Shah
               <br />
               Plot No. D-334, Nr Bagade, Turbhe Naka
