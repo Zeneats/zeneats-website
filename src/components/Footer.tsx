@@ -70,9 +70,9 @@ export default function Footer() {
               info@zeneats.co.in
             </a>
             <p className="text-sm text-text-primary/60 mt-2 leading-relaxed">
-              M/S Gurunath V Pandit, Vipul K Shah
+              16E2 Lodha Crest World
               <br />
-              Plot No. D-334, Nr Bagade, Turbhe Naka
+              Lower Parel, Mumbai 400013
             </p>
             {/* LinkedIn icon */}
             <a

@@ -91,7 +91,7 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-32 pb-12 px-6 overflow-hidden">
+        <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-12 px-6 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] rounded-full bg-accent/10 blur-[150px] pointer-events-none" />
 
           <h1 className="contact-hero-heading text-[32px] sm:text-[40px] md:text-[56px] font-semibold leading-[1.1] text-text-heading text-center max-w-[800px] mb-6 opacity-0">
@@ -426,9 +426,9 @@ export default function ContactPage() {
                   </h3>
                 </div>
                 <p className="text-sm text-text-primary/80 leading-relaxed">
-                  M/S Gurunath V Pandit, Vipul K Shah
+                  16E2 Lodha Crest World
                   <br />
-                  Plot No. D-334, Nr Bagade, Turbhe Naka
+                  Lower Parel, Mumbai 400013
                 </p>
               </div>
             </div>

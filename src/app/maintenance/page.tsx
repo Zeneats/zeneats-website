@@ -88,9 +88,9 @@ export default function MaintenancePage() {
               <div>
                 <p className="text-xs text-text-muted mb-0.5">Address</p>
                 <p className="text-sm text-text-primary/80 leading-relaxed">
-                  M/S Gurunath V Pandit, Vipul K Shah
+                  16E2 Lodha Crest World
                   <br />
-                  Plot No. D-334, Nr Bagade, Turbhe Naka
+                  Lower Parel, Mumbai 400013
                 </p>
               </div>
             </div>
