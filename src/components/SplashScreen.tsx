@@ -59,7 +59,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     tl.to(logo, {
       x: deltaX,
       y: deltaY,
-      scale: 0.6,
+      scale: 0.35,
       duration: 0.7,
       ease: "power3.inOut",
     });
@@ -91,7 +91,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         ref={logoRef}
         src="/images/logos/zeneats-logo.png"
         alt="ZenEats"
-        className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain opacity-0 rounded-2xl"
+        className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 object-contain opacity-0 rounded-2xl"
       />
     </div>
   );
