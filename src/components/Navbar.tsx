@@ -33,7 +33,7 @@ export default function Navbar() {
             alt="ZenEats"
             width={500}
             height={150}
-            className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain"
+            className="h-36 sm:h-40 md:h-44 lg:h-48 w-auto object-contain"
           />
         </a>
 
