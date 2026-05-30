@@ -27,15 +27,40 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     const overlay = overlayRef.current;
     if (!logo || !overlay) return;
 
-    // Calculate the target position (navbar logo position)
-    const navbarLogoX = 24 + 16; // px-6 (24px) + half of ~32px logo
-    const navbarLogoY = 28; // h-14 / 2 = center of navbar
+    // Measure the real navbar logo so the splash lands exactly on it,
+    // accounting for the navbar's centered max-width container and padding.
+    const navbarLogo = document.getElementById("navbar-logo");
+    // The logo may already carry a GSAP scale (set on cleanup for replay), so
+    // normalize the measured width back to its unscaled size before deriving
+    // the target scale — otherwise the landed logo comes out too large.
+    const currentScale = Number(gsap.getProperty(logo, "scaleX")) || 1;
+    const splashRect = logo.getBoundingClientRect();
+    const splashBaseWidth = splashRect.width / currentScale;
+    const splashCenterX = splashRect.left + splashRect.width / 2;
+    const splashCenterY = splashRect.top + splashRect.height / 2;
 
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
+    let deltaX: number;
+    let deltaY: number;
+    let targetScale: number;
 
-    const deltaX = navbarLogoX - centerX;
-    const deltaY = navbarLogoY - centerY;
+    if (navbarLogo) {
+      const navRect = navbarLogo.getBoundingClientRect();
+      const navCenterX = navRect.left + navRect.width / 2;
+      const navCenterY = navRect.top + navRect.height / 2;
+
+      // The source image is square (1500x1500) and both logos use object-contain,
+      // so matching the rendered logo size is just matching the contained square.
+      // min() guards against either box being letterboxed by its aspect ratio.
+      const navVisibleSize = Math.min(navRect.width, navRect.height);
+      targetScale = navVisibleSize / splashBaseWidth;
+      deltaX = navCenterX - splashCenterX;
+      deltaY = navCenterY - splashCenterY;
+    } else {
+      // Fallback to a reasonable top-left landing if the navbar isn't mounted.
+      targetScale = 0.35;
+      deltaX = 56 - splashCenterX;
+      deltaY = 56 - splashCenterY;
+    }
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -59,7 +84,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     tl.to(logo, {
       x: deltaX,
       y: deltaY,
-      scale: 0.35,
+      scale: targetScale,
       duration: 0.7,
       ease: "power3.inOut",
     });

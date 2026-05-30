@@ -29,6 +29,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="/" className="flex items-center -my-12 sm:-my-14 md:-my-16 lg:-my-20">
           <Image
+            id="navbar-logo"
             src="/images/logos/zeneats-logo.png"
             alt="ZenEats"
             width={500}
