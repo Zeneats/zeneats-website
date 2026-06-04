@@ -25,7 +25,7 @@ export const deleteAccount: LegalDoc = {
       title: "Overview",
       body: [
         "ZenEats is operated by HKD TECH LLP. If you have a registered ZenEats account, you can request that your account and the personal data associated with it be deleted. Account deletion is self-service from within the ZenEats mobile app, and can also be requested by contacting us directly if you are unable to access the app.",
-        "Once a deletion request is confirmed, your account is permanently deleted within 7 days. Certain records may be retained for a limited period where required by law, as described below.",
+        "Once a deletion request is confirmed, your account and all personal data associated with it are permanently deleted within 7 days.",
       ],
     },
     {
@@ -60,26 +60,12 @@ export const deleteAccount: LegalDoc = {
       ],
     },
     {
-      id: "data-retained",
-      number: 4,
-      title: "What Data Is Retained",
-      body: [
-        "We retain a limited set of records after account deletion only where required to comply with applicable legal, tax, accounting, and regulatory obligations, or to resolve disputes and prevent fraud.",
-      ],
-      listIntro: "This may include:",
-      list: [
-        "Transaction and invoice records relating to completed orders, retained for the period required under applicable tax and accounting laws (TODO: confirm exact retention period with compliance — e.g. up to 8 years for GST/financial records in India);",
-        "Records required to comply with a legal obligation, court order, or lawful request from an authority;",
-        "Limited records necessary to detect, prevent, or address fraud, security, or abuse, retained only as long as required for that purpose.",
-      ],
-    },
-    {
       id: "need-help",
-      number: 5,
+      number: 4,
       title: "Can’t Access the App?",
       body: [
         "If you are unable to access the ZenEats app to complete the steps above, you can request account deletion by emailing us from your registered email address. Please include the email address and phone number associated with your ZenEats account so we can verify your identity.",
-        "We will process verified deletion requests within 7 days, subject to the retention exceptions described above.",
+        "We will process verified deletion requests within 7 days, permanently deleting your account and all associated personal data.",
       ],
     },
   ],
