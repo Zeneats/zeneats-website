@@ -22,6 +22,12 @@ const legalLinks: LegalLink[] = [
     href: "/privacy",
   },
   {
+    title: "Delete Your Account",
+    description:
+      "How to request deletion of your ZenEats account and data, what is deleted, and what is retained.",
+    href: "/legal/delete-account",
+  },
+  {
     title: "Terms of Use",
     description:
       "The terms governing your access to and use of the ZenEats platform, website, and mobile application.",
